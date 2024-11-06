@@ -1,4 +1,4 @@
-# MODEL TRAINING AND CONVERTING FOR ROCKCHIP NPU
+# YOLOv8 MODEL TRAINING AND CONVERTING FOR ROCKCHIP NPU
 
 ```bash
 git clone https://github.com/airockchip/ultralytics_yolov8
