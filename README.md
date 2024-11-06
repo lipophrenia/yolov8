@@ -58,7 +58,7 @@ python3 track.py -m <model> -s <source> [-width <width>] [-height <height>] [-io
 
 ```bash
 # inference with custom post-process
-python3 track_cam.py -m <model> -s <source> [-width <width>] [-height <height>] [-iou <iou>] [-conf <conf>] [-t] [-v] #requires opencv
+python3 track_opencv.py -m <model> -s <source> [-width <width>] [-height <height>] [-iou <iou>] [-conf <conf>] [-t] [-v] #requires opencv
 # model - relative path to .pt model.
 # source - source (image/video/rtsp)
 # width - source width resolution.
