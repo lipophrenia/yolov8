@@ -47,8 +47,7 @@ class SensorFactory(GstRtspServer.RTSPMediaFactory):
             if ret:
                 # It is better to change the resolution of the camera 
                 # instead of changing the image shape as it affects the image quality.
-                frame = cv2.resize(frame, (args.frame_width, args.frame_height), \
-                    interpolation = cv2.INTER_LINEAR)
+                frame = cv2.resize(frame, (args.frame_width, args.frame_height), interpolation = cv2.INTER_LINEAR)
                 
                 results = yolo.track(source=frame, imgsz=frame_size, iou=args.iou_thres, conf=args.conf_thres, stream=True, show=False, max_det=100)
                 for result in results:
@@ -111,7 +110,7 @@ class GstServer(GstRtspServer.RTSPServer):
         self.set_service(str(args.port))
         self.get_mount_points().add_factory(args.stream_uri, self.factory)
         self.attach(None)
-        print(f"Stream is running on rtsp://172.16.15.2:{args.port}{args.stream_uri}")
+        print(f"Stream is running on rtsp://<yourIP>:{args.port}{args.stream_uri}")
 
 parser = argparse.ArgumentParser(
     description="""RTSP server with YOLOv8 inference.""",
